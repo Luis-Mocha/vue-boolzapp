@@ -72,10 +72,11 @@ p {
 .chat-card {
     display: flex;
     justify-content: space-between;
+    height: 80px;
 }
 
-.chat-card img {
-    width: 70px;
+.active {
+    background-color: rgb(233,235,235);
 }
 
 /* --- CHAT PRINCIPALE */
