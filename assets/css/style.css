@@ -1,8 +1,58 @@
+/* UTILITY */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.height-10 {
+    height: 10%;
+}
+
+/* --- */
 #web-app {
     background: linear-gradient(0deg, rgba(217,219,212,1) 80%, rgba(0,148,133,1) 80%);
 }
 
 #main {
     background-color: white;
-    height: 90%;
+    height: 95%;
+}
+
+#main-dx {
+    width: 30%;
+}
+
+#main-sx {
+    width: 70%;
+}
+
+.info-top {
+    background-color: rgb(234,234,234);
+}
+
+/* --- LISTA CHAT */
+#notification {
+    background-color: rgb(142,218,252);
+}
+
+#search-chat {
+    height: 5%;
+    background-color: rgb(250,250,250);
+}
+
+
+#chat-list {
+    height: 75%;
+}
+
+/* --- CHAT PRINCIPALE */
+#chat {
+    background-image: url(../img/mine.jpg);
+    height: 80%;
+
+}
+
+#write-msg {
+    background-color: rgb(243,238,234);
 }
