@@ -65,13 +65,17 @@ p {
 
 
 #search-chat {
-    height: 5%;
+    height: 50px;
     background-color: rgb(250,250,250);
 }
 
+.chat-card {
+    display: flex;
+    justify-content: space-between;
+}
 
-#chat-list {
-    height: 75%;
+.chat-card img {
+    width: 70px;
 }
 
 /* --- CHAT PRINCIPALE */
