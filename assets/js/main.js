@@ -8,7 +8,7 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: 'avatar_1.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -178,9 +178,9 @@ createApp({
         // funzioni Vue3
 
         setActive(i) {
-            for (const key in this.contacts) {
-                this.contacts[key].visible = false
-            }
+            this.contacts.forEach(element => {
+                element.visible = false
+            });
 
             this.contacts[i].visible = true
         }

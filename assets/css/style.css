@@ -75,7 +75,7 @@ p {
     height: 80px;
 }
 
-.active {
+.chat-card.active {
     background-color: rgb(233,235,235);
 }
 

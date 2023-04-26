@@ -23,7 +23,7 @@
         <div id="web-app" class="px-2 vh-100 d-flex align-items-center ">
 
             <div id="main" class="container p-0 d-flex">
-                <!-- parte sinistra -->
+                <!-- PARTE SINISTRA -->
                 <div id="main-dx" class="d-flex flex-column">
                     <!-- top info -->
                     <div class="info-top border height-10 d-flex justify-content-between align-items-center">
@@ -84,18 +84,19 @@
                     </div>
                 </div>
 
-                <!-- parte destra -->
+                <!-- PARTE DESTRA -->
                 <div id="main-sx" class="d-flex flex-column">
                     <!-- top info -->
                     <div class="info-top border height-10 d-flex justify-content-between align-items-center">
                         
 
-                        <div class="h-100 d-flex align-items-center">
-                            <img src="./assets/img/avatar_io.jpg" alt="Icona Utente" class="pic-container">
+                        <div class="h-100 d-flex align-items-center" v-for="(elem, index) in contacts" :key="index" :class=" (elem.visible === true) ? 'd-block' : 'd-none' ">
+
+                            <img v-bind:src="imgPath + elem.avatar" alt="Icona Utente" class="pic-container">
 
                             <div class="mx-2">
-                                <div class="fw-bold lh-1">Mattia</div>
-                                <span class="secondary-text">Ultimo accesso oggi 11:20</span>
+                                <div v-if="elem.visible === true" class="fw-bold lh-1">{{elem.name}}</div>
+                                <span v-if="elem.visible === true" class="secondary-text">Ultimo accesso oggi 11:20</span>
                             </div>
                         </div>
 
