@@ -1,15 +1,37 @@
-/* UTILITY */
+/* UTILITY  */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+p {
+    margin: 0;
 }
 
 .height-10 {
     height: 10%;
 }
 
-/* --- */
+.height-100 {
+    height: 100%;
+}
+
+.pic-container {
+    height: 100%;
+    clip-path: circle();
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.secondary-text {
+    color: gray;
+    font-size: small;
+}
+
+
+/* GENERAL */
 #web-app {
     background: linear-gradient(0deg, rgba(217,219,212,1) 80%, rgba(0,148,133,1) 80%);
 }
@@ -29,12 +51,21 @@
 
 .info-top {
     background-color: rgb(234,234,234);
+    padding: 0.5rem 1rem ;
+}
+
+.icon-options {
+    color: gray;
 }
 
 /* --- LISTA CHAT */
 #notification {
     background-color: rgb(142,218,252);
 }
+.fa-bell-slash {
+    color: rgb(142,218,252);
+}
+
 
 #search-chat {
     height: 5%;
