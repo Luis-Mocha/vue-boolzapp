@@ -173,15 +173,16 @@ createApp({
             indiceDinamico: 0,
             messageVariable: '',
             dateVariable: '',
+            replyVariable: '',
             
         }
     },
 
     mounted() { 
         //cicli di vita dei componenti di applicazioni Vue. Vengono eseguite azioni al caricamento dei componenti
-        this.setActive(),
+        this.setActive()
 
-        this.getDate()
+        // this.getDate()
     },
 
     methods: {
@@ -217,7 +218,9 @@ createApp({
             newMessage.date = this.dateVariable;
             // console.log(this.newMessage);
 
-            this.contacts[i].messages.push(newMessage );
+            this.contacts[i].messages.push(newMessage);
+
+            console.log('prima', this.dateVariable);
 
             this.messageVariable = '';
             this.dateVariable = '';
@@ -226,12 +229,30 @@ createApp({
         getRandomText() {
             axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
             .then((res) => {
-                // newReply = { date : '12', message : '', status : 'received'};
-
-                newReply = res.data.response;
-                console.log(newReply);
+                this.replyVariable = res.data.response;
             })
+
+            console.log(this.replyVariable)
         },
+
+        // /*
+        replyFunction(i) {
+            // Risposta automatica
+
+            this.getRandomText();
+            this.getDate();
+
+            console.log('dopo', this.dateVariable);
+
+            newReply = { date : '', message : '', status : 'received'};
+
+            newReply.message = this.replyVariable;
+            newReply.date = this.dateVariable;
+
+            this.contacts[i].messages.push(newReply);
+            
+        },
+        // */
         
 
         
