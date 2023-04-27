@@ -94,7 +94,7 @@
 
                             <div class="mx-2">
                                 <div class="fw-bold lh-1">{{contacts[indiceDinamico].name}}</div>
-                                <span class="secondary-text">Ultimo accesso oggi 11:20</span>
+                                <span class="secondary-text">Ultimo accesso oggi {{contacts[indiceDinamico].messages[ [contacts[indiceDinamico].messages.length - 1] ].date.split(' ')[1]}}</span>
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@
                     <div id="chat" class="overflow-auto p-3">
                         <div v-for="(elem, index) in contacts[indiceDinamico].messages" :key="index" :class="(elem.status === 'sent') ? 'sent' : 'receveid' ">
                             <div>{{elem.message}}</div>
-                            
+                            <div class="secondary-text text-end">{{ elem.date.split(' ')[1].split(':')[0] + ':' + elem.date.split(' ')[1].split(':')[1]}}</div>
                         </div>
                     </div>
                     <!-- scrivi un messaggio -->

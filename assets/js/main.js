@@ -196,7 +196,8 @@ createApp({
             });
             
             list[this.indiceDinamico].classList.add("active");
-        }
+        },
+
         
     }
 }).mount('#app')
