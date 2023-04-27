@@ -203,6 +203,7 @@ createApp({
             list[this.indiceDinamico].classList.add("active");
         },
 
+        // PUSH NUOVO MESSAGGIO
         getDate() {
             DateTime = luxon.DateTime;
             dataObject = DateTime.now().toObject()	
@@ -226,6 +227,8 @@ createApp({
             this.dateVariable = '';
         },
 
+
+        // RISPOSTA AUTOMATICA
         getRandomText() {
             axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
             .then((res) => {
@@ -235,9 +238,8 @@ createApp({
             console.log(this.replyVariable)
         },
 
-        // /*
+        
         replyFunction(i) {
-            // Risposta automatica
 
             this.getRandomText();
             this.getDate();
@@ -252,7 +254,12 @@ createApp({
             this.contacts[i].messages.push(newReply);
             
         },
-        // */
+
+        replyFunctionTimeout(i) {
+            setTimeout(() => {
+                this.replyFunction(i)
+              }, 3000);
+        }
         
 
         

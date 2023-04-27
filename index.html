@@ -115,7 +115,7 @@
                     <!-- scrivi un messaggio -->
                     <div id="write-msg" class="height-10 p-3 d-flex align-items-center justify-content-between">
                         <i class="fa-regular fa-face-smile fs-5 cursor-pointer"></i>
-                        <input type="text" class="h-100 py-3 px-3 w-100 mx-3" placeholder="Scrivi un messaggio" v-model=" messageVariable " @KeyUp.enter=" getDate() ;  getRandomText() ; newMessageFunction(indiceDinamico) ; replyFunction(indiceDinamico)"> <!-- replyFunction(indiceDinamico) -->
+                        <input type="text" minlength="1" class="h-100 py-3 px-3 w-100 mx-3" placeholder="Scrivi un messaggio" v-model=" messageVariable " @KeyUp.enter=" getDate() ; newMessageFunction(indiceDinamico) ;  getRandomText() ; replyFunctionTimeout(indiceDinamico)"> <!-- replyFunction(indiceDinamico) -->
                         <i class="fa-solid fa-microphone fs-5 cursor-pointer"></i>
                     </div>
 
