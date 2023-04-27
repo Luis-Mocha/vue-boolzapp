@@ -115,7 +115,7 @@
                     <!-- scrivi un messaggio -->
                     <div id="write-msg" class="height-10 p-3 d-flex align-items-center justify-content-between">
                         <i class="fa-regular fa-face-smile fs-5 cursor-pointer"></i>
-                        <input type="text" class="h-100 py-3 px-3 w-100 mx-3" placeholder="Scrivi un messaggio" v-model=" messageVariable " @KeyUp.enter=" getDate() ; newMessageFunction(indiceDinamico)">
+                        <input type="text" class="h-100 py-3 px-3 w-100 mx-3" placeholder="Scrivi un messaggio" v-model=" messageVariable " @KeyUp.enter=" getDate() ; newMessageFunction(indiceDinamico) ; getRandomText()">
                         <i class="fa-solid fa-microphone fs-5 cursor-pointer"></i>
                     </div>
 
@@ -126,6 +126,8 @@
         </div>
     </div>
 
+    <!-- link Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     <!-- link bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

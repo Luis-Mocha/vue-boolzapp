@@ -212,7 +212,6 @@ createApp({
 
         newMessageFunction(i) {
             newMessage = { date : '', message : '', status : 'sent'};
-            newReply = 
 
             newMessage.message = this.messageVariable;
             newMessage.date = this.dateVariable;
@@ -221,8 +220,18 @@ createApp({
             this.contacts[i].messages.push(newMessage );
 
             this.messageVariable = '';
-            this.newMessage.date = '';
-        }
+            this.dateVariable = '';
+        },
+
+        getRandomText() {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
+            .then((res) => {
+                // newReply = { date : '12', message : '', status : 'received'};
+
+                newReply = res.data.response;
+                console.log(newReply);
+            })
+        },
         
 
         
