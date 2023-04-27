@@ -3,7 +3,6 @@ const {createApp} = Vue
 createApp({
     data() {
         return {
-            indiceDinamico: 0,
             // variabili Vue3
             contacts: [
                 {
@@ -171,13 +170,18 @@ createApp({
 
             // altre variabili,
             imgPath: './assets/img/',
+            indiceDinamico: 0,
+            messageVariable: '',
+            dateVariable: '',
             
         }
     },
 
     mounted() { 
         //cicli di vita dei componenti di applicazioni Vue. Vengono eseguite azioni al caricamento dei componenti
-        this.setActive()
+        this.setActive(),
+
+        this.getDate()
     },
 
     methods: {
@@ -197,6 +201,29 @@ createApp({
             
             list[this.indiceDinamico].classList.add("active");
         },
+
+        getDate() {
+            DateTime = luxon.DateTime;
+            dataObject = DateTime.now().toObject()	
+            console.log(dataObject)
+
+            this.dateVariable = `${dataObject.day}/${dataObject.month}/${dataObject.year} ${dataObject.hour}:${dataObject.minute}:${dataObject.second}`
+        },
+
+        newMessageFunction(i) {
+            newMessage = { date : '', message : '', status : 'sent'};
+            newReply = 
+
+            newMessage.message = this.messageVariable;
+            newMessage.date = this.dateVariable;
+            // console.log(this.newMessage);
+
+            this.contacts[i].messages.push(newMessage );
+
+            this.messageVariable = '';
+            this.newMessage.date = '';
+        }
+        
 
         
     }
