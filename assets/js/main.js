@@ -3,6 +3,7 @@ const {createApp} = Vue
 createApp({
     data() {
         return {
+            indiceDinamico: 0,
             // variabili Vue3
             contacts: [
                 {
@@ -30,7 +31,7 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: 'avatar_2.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -52,7 +53,7 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: 'avatar_3.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -74,7 +75,7 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: 'avatar_4.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -91,7 +92,7 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: 'avatar_5.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -108,7 +109,7 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: 'avatar_6.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -130,7 +131,7 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: 'avatar_7.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -147,7 +148,7 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: 'avatar_8.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -169,20 +170,32 @@ createApp({
             ],
 
             // altre variabili,
-            imgPath: './assets/img/'
+            imgPath: './assets/img/',
             
         }
+    },
+
+    mounted() { 
+        //cicli di vita dei componenti di applicazioni Vue. Vengono eseguite azioni al caricamento dei componenti
+        this.setActive()
     },
 
     methods: {
         // funzioni Vue3
 
-        setActive(i) {
-            this.contacts.forEach(element => {
-                element.visible = false
-            });
+        setIndiceDinamico(i) {
+            console.log(i)
+            this.indiceDinamico = i
+        },
 
-            this.contacts[i].visible = true
+        setActive() {
+            list = document.querySelectorAll('.chat-card');
+            // console.log(list[this.indiceDinamico]);
+            list.forEach(element => {
+                element.classList.remove("active");
+            });
+            
+            list[this.indiceDinamico].classList.add("active");
         }
         
     }
