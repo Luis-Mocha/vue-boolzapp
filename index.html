@@ -24,7 +24,7 @@
 
             <div id="main" class="container p-0 d-flex">
                 <!-- PARTE SINISTRA -->
-                <div id="main-dx" class="d-flex flex-column">
+                <div id="main-sx" class="d-flex flex-column">
                     <!-- top info -->
                     <div class="info-top border height-10 d-flex justify-content-between align-items-center">
                         <!-- info personali -->
@@ -64,7 +64,6 @@
                         </div>
                         <input type="text" placeholder=" Cerca o inizia una nuova chat" class="w-75 border">
                     </div>
-                    
 
                     <!-- lista chat -->
                     <div id="chat-list" class="overflow-auto">
@@ -85,18 +84,18 @@
                 </div>
 
                 <!-- PARTE DESTRA -->
-                <div id="main-sx" class="d-flex flex-column">
+                <div id="main-dx" class="d-flex flex-column">
                     <!-- top info -->
                     <div class="info-top border height-10 d-flex justify-content-between align-items-center">
                         
 
                         <div class="h-100 d-flex align-items-center" v-for="(elem, index) in contacts" :key="index" :class=" (elem.visible === true) ? 'd-block' : 'd-none' ">
 
-                            <img v-bind:src="imgPath + elem.avatar" alt="Icona Utente" class="pic-container">
+                            <img  v-bind:src="imgPath + elem.avatar" alt="Icona Utente" class="pic-container">
 
                             <div class="mx-2">
-                                <div v-if="elem.visible === true" class="fw-bold lh-1">{{elem.name}}</div>
-                                <span v-if="elem.visible === true" class="secondary-text">Ultimo accesso oggi 11:20</span>
+                                <div class="fw-bold lh-1">{{elem.name}}</div>
+                                <span class="secondary-text">Ultimo accesso oggi 11:20</span>
                             </div>
                         </div>
 
@@ -109,6 +108,7 @@
                     </div>
                     <!-- chat attiva -->
                     <div id="chat" class="overflow-auto">
+                        <div> {{contacts[0].messages}} </div>
                         
                     </div>
                     <!-- scrivi un messaggio -->
