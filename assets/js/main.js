@@ -182,7 +182,6 @@ createApp({
         //cicli di vita dei componenti di applicazioni Vue. Vengono eseguite azioni al caricamento dei componenti
         this.setActive()
 
-        // this.getDate()
     },
 
     methods: {
@@ -259,8 +258,7 @@ createApp({
             setTimeout(() => {
                 this.replyFunction(i)
               }, 3000);
-        }
-        
+        },
 
         
     }

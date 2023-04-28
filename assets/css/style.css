@@ -4,14 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 p {
     margin: 0;
 }
-
-.height-10 {
-    height: 10%;
-}
-
 
 .pic-container {
     height: 100%;
@@ -49,16 +45,25 @@ p {
 .info-top {
     background-color: rgb(234,234,234);
     padding: 0.5rem 1rem ;
+    height: 70px;
 }
 
-.icon-options {
+.icon-options i {
     color: gray;
+    cursor: pointer;
 }
+
+.icon-options i:hover {
+    color: black;
+    font-size: larger;
+} 
 
 /* --- LISTA CHAT */
 #notification {
     background-color: rgb(142,218,252);
+    height: 100px;
 }
+
 .fa-bell-slash {
     color: rgb(142,218,252);
 }
@@ -75,6 +80,10 @@ p {
     height: 80px;
 }
 
+.chat-card:hover {
+    background-color: rgb(239, 245, 245);
+}
+
 .chat-card.active {
     background-color: rgb(233,235,235);
 }
@@ -84,10 +93,9 @@ p {
     background-color: rgb(243,238,234);
 }
 
-
 #chat {
     background-image: url(../img/mine.jpg);
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }

@@ -26,7 +26,7 @@
                 <!-- PARTE SINISTRA -->
                 <div id="main-sx" class="d-flex flex-column">
                     <!-- top info -->
-                    <div class="info-top border height-10 d-flex justify-content-between align-items-center">
+                    <div class="info-top border d-flex justify-content-between align-items-center">
                         <!-- info personali -->
                         <div class="my-info h-100 d-flex align-items-center">
                             <div class="h-100">
@@ -40,12 +40,12 @@
                         <!-- icone opzioni -->
                         <div class="icon-options d-flex">
                             <i class="fa-solid fa-circle-notch "></i>
-                            <i class="fa-solid fa-message ms-2"></i>
-                            <i class="fa-solid fa-ellipsis-vertical ms-2"></i>
+                            <i class="fa-solid fa-message ms-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
                         </div>
                     </div>
                     <!-- ricevi notifiche -->
-                    <div id="notification" class="height-10 py-2 px-3 d-flex align-items-center">
+                    <div id="notification" class="py-2 ps-3 d-flex align-items-center">
                         <i class="fa-solid fa-bell-slash bg-light rounded-circle fs-4 p-2"></i>
 
                         <div class="ms-2">
@@ -86,7 +86,7 @@
                 <!-- PARTE DESTRA -->
                 <div id="main-dx" class="d-flex flex-column">
                     <!-- top info -->
-                    <div class="info-top border height-10 d-flex justify-content-between align-items-center">
+                    <div class="info-top border d-flex justify-content-between align-items-center">
                         
                         <div class="h-100 d-flex align-items-center">
 
@@ -113,9 +113,9 @@
                         </div>
                     </div>
                     <!-- scrivi un messaggio -->
-                    <div id="write-msg" class="height-10 p-3 d-flex align-items-center justify-content-between">
+                    <div id="write-msg" class="p-3 d-flex align-items-center justify-content-between">
                         <i class="fa-regular fa-face-smile fs-5 cursor-pointer"></i>
-                        <input type="text" minlength="1" class="h-100 py-3 px-3 w-100 mx-3" placeholder="Scrivi un messaggio" v-model=" messageVariable " @KeyUp.enter=" getDate() ; newMessageFunction(indiceDinamico) ;  getRandomText() ; replyFunctionTimeout(indiceDinamico)"> <!-- replyFunction(indiceDinamico) -->
+                        <input type="text" minlength="1" class="h-100 py-2 px-3 w-100 mx-3" placeholder="Scrivi un messaggio" v-model=" messageVariable " @KeyUp.enter=" getDate() ; newMessageFunction(indiceDinamico) ;  getRandomText() ; replyFunctionTimeout(indiceDinamico)"> <!-- replyFunction(indiceDinamico) -->
                         <i class="fa-solid fa-microphone fs-5 cursor-pointer"></i>
                     </div>
 
