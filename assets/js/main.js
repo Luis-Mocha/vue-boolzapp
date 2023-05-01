@@ -260,5 +260,10 @@ createApp({
               }, 3000);
         },
 
+        // CANCELLARE MESSAGGIO
+        cancelText(iDinamico, indexMessaggio) {
+            this.contacts[iDinamico].messages.splice(indexMessaggio, 1);
+        },
+
     }
 }).mount('#app')
