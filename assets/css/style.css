@@ -77,6 +77,7 @@ p {
 .chat-card {
     justify-content: space-between;
     height: 80px;
+    overflow: hidden ;
 }
 
 .chat-card:hover {

@@ -72,8 +72,11 @@
                             <img v-bind:src="imgPath + elem.avatar" alt="Icona Utente" class="rounded-circle">
                             <div class="w-100 ps-2 d-block">
                                 <div>{{elem.name}}</div>
-                                <div class="secondary-text">
-                                    {{elem.messages[elem.messages.length - 1].message}}
+                                <div class="secondary-text" v-if="elem.messages[elem.messages.length - 1].status === 'sent' ">
+                                    <i class="fa-solid fa-check-double"></i> {{elem.messages[elem.messages.length - 1].message}}
+                                </div>
+                                <div class="secondary-text" v-else>
+                                    {{elem.name}}: {{elem.messages[elem.messages.length - 1].message}}
                                 </div>
                             </div>
                             <div>
@@ -94,7 +97,7 @@
 
                             <div class="mx-2">
                                 <div class="fw-bold lh-1">{{contacts[indiceDinamico].name}}</div>
-                                <span class="secondary-text">Ultimo accesso oggi {{contacts[indiceDinamico].messages[ [contacts[indiceDinamico].messages.length - 1] ].date.split(' ')[1]}}</span>
+                                <span class="secondary-text">Ultimo accesso oggi {{contacts[indiceDinamico].messages[ [contacts[indiceDinamico].messages.length - 1] ].date.split(' ')[1].split(':')[0]}}:{{contacts[indiceDinamico].messages[ [contacts[indiceDinamico].messages.length - 1] ].date.split(' ')[1].split(':')[1]}}</span>
                             </div>
                         </div>
 
