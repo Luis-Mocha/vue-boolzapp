@@ -174,6 +174,7 @@ createApp({
             messageVariable: '',
             dateVariable: '',
             replyVariable: '',
+            searchInput: '',
             
         }
     },
@@ -263,6 +264,18 @@ createApp({
         // CANCELLARE MESSAGGIO
         cancelText(iDinamico, indexMessaggio) {
             this.contacts[iDinamico].messages.splice(indexMessaggio, 1);
+        },
+
+        //FILTRARE CHAT 
+        filterChat() {
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes( this.searchInput)) {
+                    element.visible = true
+                } else {
+                    element.visible = false
+                }
+            });
+            
         },
 
     }

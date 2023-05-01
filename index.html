@@ -62,15 +62,15 @@
                         <div class="w-25 text-center border d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass text-secondary"></i>
                         </div>
-                        <input type="text" placeholder=" Cerca o inizia una nuova chat" class="w-75 border">
+                        <input type="text" placeholder=" Cerca o inizia una nuova chat" class="w-75 border p-1" v-model=" searchInput " @keydown=" filterChat() " @keyup.delete=" filterChat() ">
                     </div>
 
                     <!-- lista chat -->
                     <div id="chat-list" class="overflow-auto">
                         
-                        <div class="chat-card p-2 border cursor-pointer" v-for="(elem, index) in contacts" :key="index"  @click="setIndiceDinamico(index) ; setActive()" >
+                        <div class="chat-card p-2 border cursor-pointer d-flex" v-for="(elem, index) in contacts" :key="index"  @click="setIndiceDinamico(index) ; setActive()" :class=" (elem.visible === true) ? 'd-block' : 'd-none' ">
                             <img v-bind:src="imgPath + elem.avatar" alt="Icona Utente" class="rounded-circle">
-                            <div class="w-100 ps-2">
+                            <div class="w-100 ps-2 d-block">
                                 <div>{{elem.name}}</div>
                                 <div class="secondary-text">
                                     {{elem.messages[elem.messages.length - 1].message}}
