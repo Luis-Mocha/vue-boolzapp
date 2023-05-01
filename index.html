@@ -108,8 +108,23 @@
                     <!-- chat attiva -->
                     <div id="chat" class="overflow-auto p-3">
                         <div v-for="(elem, index) in contacts[indiceDinamico].messages" :key="index" :class="(elem.status === 'sent') ? 'sent' : 'receveid' ">
-                            <div>{{elem.message}}</div>
+                            <div class="d-flex">
+                                <div>{{elem.message}}</div>
+                            
+                            <!-- menu a tendina -->
+                                <div class="dropdown">
+                                    <button class="msg-menu" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <!-- dropdown-toggle -->
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Message Info</a></li>
+                                        <li><a class="dropdown-item" href="#">Delete Message</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
                             <div class="secondary-text text-end">{{ elem.date.split(' ')[1].split(':')[0] + ':' + elem.date.split(' ')[1].split(':')[1]}}</div>
+
                         </div>
                     </div>
                     <!-- scrivi un messaggio -->

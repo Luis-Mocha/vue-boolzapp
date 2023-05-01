@@ -260,6 +260,5 @@ createApp({
               }, 3000);
         },
 
-        
     }
 }).mount('#app')
