@@ -269,7 +269,7 @@ createApp({
         //FILTRARE CHAT 
         filterChat() {
             this.contacts.forEach(element => {
-                if (element.name.toLowerCase().includes( this.searchInput)) {
+                if (element.name.toLowerCase().includes( this.searchInput.toLowerCase())) {
                     element.visible = true
                 } else {
                     element.visible = false
